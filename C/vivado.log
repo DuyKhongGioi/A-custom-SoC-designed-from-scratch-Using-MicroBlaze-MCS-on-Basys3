@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Feb 18 22:13:45 2026
+# Process ID: 7601
+# Current directory: /home/canguangamchua/SoC_Projects/Code/C
+# Command line: vivado
+# Log file: /home/canguangamchua/SoC_Projects/Code/C/vivado.log
+# Journal file: /home/canguangamchua/SoC_Projects/Code/C/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/canguangamchua/tools/Xilinx/Vivado/2018.3/data/ip'.
+update_compile_order -fileset sources_1
+file mkdir /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new
+close [ open /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new/uart_core.vhd w ]
+add_files /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new/uart_core.vhd
+update_compile_order -fileset sources_1
+close [ open /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new/gpo_core.vhd w ]
+add_files /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new/gpo_core.vhd
+update_compile_order -fileset sources_1
+close [ open /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new/gpi_core.vhd w ]
+add_files /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new/gpi_core.vhd
+update_compile_order -fileset sources_1
+close [ open /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new/timer_core.vhd w ]
+add_files /home/canguangamchua/SoC_Projects/SoC_scratch/SoC_scratch.srcs/sources_1/new/timer_core.vhd
+update_compile_order -fileset sources_1
