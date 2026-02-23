@@ -16,8 +16,9 @@ SDKworkspace/SDK.log
 **/Release/
 .metadata/
 
-SoC_scratch.srcs/sources_1/ip/**/*
+# --- IP Core Ignore ---
+SoC_scratch/SoC_scratch.srcs/sources_1/ip/**/*
 
-# Keep the config of MCS
-!SoC_scratch.srcs/sources_1/ip/**/*.xci
-!SoC_scratch.srcs/sources_1/ip/**/*.xcix
+# Keep the IP configuration files
+!SoC_scratch/SoC_scratch.srcs/sources_1/ip/**/*.xci
+!SoC_scratch/SoC_scratch.srcs/sources_1/ip/**/*.xcix
