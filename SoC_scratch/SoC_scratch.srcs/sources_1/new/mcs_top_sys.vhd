@@ -45,7 +45,26 @@ entity mcs_top_sys is
     led:            out std_logic_vector(15 downto 0);
     --uart core
     rx:             in std_logic;
-    tx:             out std_logic
+    tx:             out std_logic;
+    --xadc
+    adc_p:          in std_logic_vector(3 downto 0);
+    adc_n:          in std_logic_vector(3 downto 0);
+    
+    --PMOD JA (for PWM)
+    ja_top:         out std_logic_vector(4 downto 1);
+    ja_bot:         out std_logic_vector(10 downto 7);
+    
+    --SPI ACL2
+    acl_sclk:       out std_logic;
+    acl_mosi:       out std_logic;
+    acl_miso:       in std_logic;
+    acl_ss_n:       out std_logic;
+    --I2C HYGRO
+    hygro_i2c_scl:  out std_logic;
+    hygro_i2c_sda:  inout std_logic;
+    --4 digit 7 segment
+    an           :  out std_logic_vector(3 downto 0);
+    sseg         :  out std_logic_vector(7 downto 0)
     );
 end mcs_top_sys;
 
@@ -67,6 +86,8 @@ architecture Arch of mcs_top_sys is
    
    signal clk_100M          :   std_logic;
    signal reset_sys         :   std_logic;
+   --pwm
+   signal pwm               : std_logic_vector(7 downto 0);
    --MCS IO BUS
    signal io_addr_strobe    :   std_logic;
    signal io_address        :   std_logic_vector(31 downto 0);
@@ -83,9 +104,14 @@ architecture Arch of mcs_top_sys is
    signal sys_addr          :   std_logic_vector(20 downto 0);
    signal sys_wr_data       :   std_logic_vector(31 downto 0);
    signal sys_rd_data       :   std_logic_vector(31 downto 0);
+   
 begin
     clk_100M    <= clk;
     reset_sys   <= '0';
+    
+    --pmod JA
+    ja_top  <=  pwm(7 downto 4);
+    ja_bot  <=  pwm(3 downto 0);
     
     cpu_instantiate:   ublaze_up
     port map(
@@ -139,7 +165,22 @@ begin
     led             =>  led,
     --uart
     rx              =>  rx,
-    tx              =>  tx
+    tx              =>  tx,
+    --xadc
+    adc_p           =>  adc_p,
+    adc_n           =>  adc_n,
+    --pwm
+    pwm             =>  pwm,
+    --spi acl2
+    acl_sclk        =>  acl_sclk,
+    acl_mosi        =>  acl_mosi,
+    acl_miso        =>  acl_miso,
+    acl_ss          =>  acl_ss_n,
+    --i2c hygro
+    hygro_i2c_scl   =>  hygro_i2c_scl,
+    hygro_i2c_sda   =>  hygro_i2c_sda,
+    an              =>  an,
+    sseg            =>  sseg
     );
 
 end Architecture;

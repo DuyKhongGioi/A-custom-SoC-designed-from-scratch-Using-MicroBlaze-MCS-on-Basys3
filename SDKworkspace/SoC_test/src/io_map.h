@@ -15,6 +15,11 @@ extern "C" {
 #define S1_UART1        1
 #define S2_LED          2
 #define S3_SW           3
+#define S4_XADC			4
+#define S5_PWM			5
+#define S6_SPI			6
+#define S7_I2C			7
+#define S8_SSEG			8
 
 //..... for further slots
 

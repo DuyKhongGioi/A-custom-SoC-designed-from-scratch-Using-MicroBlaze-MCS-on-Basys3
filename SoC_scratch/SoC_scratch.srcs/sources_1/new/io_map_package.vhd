@@ -46,5 +46,10 @@ package io_map_package is
     constant S1_UART1       :   INTEGER := 1;
     constant S2_LED         :   INTEGER := 2;
     constant S3_SW          :   INTEGER := 3;
-    --constant S4_USER        :   INTEGER := 4;
+    constant S4_XADC        :   INTEGER := 4;
+    constant S5_PWM         :   INTEGER := 5;
+    constant S6_SPI         :   INTEGER := 6;
+    constant S7_I2C         :   INTEGER := 7;
+    constant S8_SSEG        :   INTEGER := 8;
+    --constant SN_USER        :   INTEGER := 4;
 end io_map_package;
